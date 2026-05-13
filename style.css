@@ -3,7 +3,7 @@
    Cambiarle qui le cambia su TUTTE le pagine
    ============================================= */
 :root {
-  --colore-sfondo:     hwb(0 0% 100%);
+  --colore-sfondo:     lch(1.16% 13.38 294.94);
   --colore-testo:      hsl(173, 96%, 53%);
   --colore-testo-muto: #ffffff;
   --colore-accento:    hsl(211, 91%, 78%);   /* ✏️ cambia questo colore con il tuo preferito */
