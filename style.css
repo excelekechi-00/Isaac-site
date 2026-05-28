@@ -3,18 +3,18 @@
    Cambiarle qui le cambia su TUTTE le pagine
    ============================================= */
 :root {
-  --colore-sfondo:     lch(1.16% 13.38 294.94);
-  --colore-testo:      hsl(173, 96%, 53%);
-  --colore-testo-muto: #ffffff;
-  --colore-accento:    hsl(211, 91%, 78%);   /* ✏️ cambia questo colore con il tuo preferito */
-  --colore-bordo:      #e5e5e5;
-  --colore-card:       #1c1b1b;
+  --colore-sfondo:     #F7F4F0;
+  --colore-testo:      #2C2825;
+  --colore-testo-muto: #7A726A;
+  --colore-accento:    #B5633A;   /* ✏️ terracotta — cambia questo colore con il tuo preferito */
+  --colore-bordo:      #E2DDD8;
+  --colore-card:       #FFFFFF;
 
-  --font-titoli: 'IBM Plex Mono', monospace;
-  --font-testo:  'IBM Plex Sans', sans-serif;
+  --font-titoli: 'DM Serif Display', Georgia, serif;
+  --font-testo:  'DM Sans', 'Helvetica Neue', sans-serif;
 
   --larghezza-max: 760px;
-  --raggio:        8px;
+  --raggio:        6px;
 }
 
 /* =============================================
@@ -38,13 +38,18 @@ body {
   line-height: 1.7;
 }
 
+/* Importa font Google */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
 /* =============================================
    NAVIGAZIONE
    ============================================= */
 nav {
   position: sticky;
   top: 0;
-  background-color: var(--colore-sfondo);
+  background-color: rgba(247, 244, 240, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--colore-bordo);
   z-index: 100;
   padding: 0 32px;
@@ -56,15 +61,16 @@ nav ul {
   gap: 32px;
   max-width: var(--larghezza-max);
   margin: 0 auto;
-  padding: 16px 0;
+  padding: 18px 0;
 }
 
 nav a {
   text-decoration: none;
   color: var(--colore-testo-muto);
   font-size: 13px;
-  font-family: var(--font-titoli);
-  letter-spacing: 0.05em;
+  font-family: var(--font-testo);
+  font-weight: 500;
+  letter-spacing: 0.04em;
   transition: color 0.2s;
 }
 
@@ -95,9 +101,10 @@ section:last-child {
    TIPOGRAFIA
    ============================================= */
 .etichetta {
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 11px;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--colore-accento);
   margin-bottom: 24px;
@@ -105,34 +112,41 @@ section:last-child {
 
 h1 {
   font-family: var(--font-titoli);
-  font-size: clamp(28px, 5vw, 42px);
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
   margin-bottom: 16px;
+  color: var(--colore-testo);
+  letter-spacing: -0.01em;
 }
 
 /* h1 nella pagina stage è leggermente più piccolo */
 .pagina-stage h1 {
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: clamp(26px, 4vw, 38px);
 }
 
 h2 {
   font-family: var(--font-titoli);
-  font-size: 22px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 400;
   margin-bottom: 8px;
+  color: var(--colore-testo);
+  letter-spacing: -0.01em;
 }
 
 h3 {
-  font-family: var(--font-titoli);
-  font-size: 15px;
+  font-family: var(--font-testo);
+  font-size: 14px;
   font-weight: 500;
   margin-bottom: 6px;
+  color: var(--colore-testo);
+  letter-spacing: 0.01em;
 }
 
 p {
   color: var(--colore-testo-muto);
   max-width: 600px;
+  font-weight: 300;
 }
 
 a {
@@ -147,10 +161,12 @@ a {
 }
 
 #hero .sottotitolo {
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 300;
   color: var(--colore-testo-muto);
   margin-bottom: 32px;
   max-width: 520px;
+  line-height: 1.8;
 }
 
 .tag-list {
@@ -161,12 +177,14 @@ a {
 }
 
 .tag {
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 12px;
-  padding: 4px 12px;
+  font-weight: 400;
+  padding: 5px 14px;
   border: 1px solid var(--colore-bordo);
   border-radius: 100px;
   color: var(--colore-testo-muto);
+  background: var(--colore-card);
 }
 
 /* =============================================
@@ -188,15 +206,17 @@ a {
 }
 
 .info-riga span:first-child {
-  font-family: var(--font-titoli);
-  font-size: 11px;
+  font-family: var(--font-testo);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   color: var(--colore-testo-muto);
 }
 
 .info-riga span:last-child {
   font-size: 15px;
+  font-weight: 400;
   color: var(--colore-testo);
 }
 
@@ -215,6 +235,12 @@ a {
   border: 1px solid var(--colore-bordo);
   border-radius: var(--raggio);
   padding: 20px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.competenza-card:hover {
+  box-shadow: 0 4px 20px rgba(44, 40, 37, 0.07);
+  border-color: #D0C9C2;
 }
 
 .competenza-card h3 {
@@ -226,7 +252,7 @@ a {
 .barra-contenitore {
   background: var(--colore-bordo);
   border-radius: 4px;
-  height: 4px;
+  height: 3px;
   overflow: hidden;
 }
 
@@ -237,10 +263,12 @@ a {
 }
 
 .livello-label {
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 10px;
+  font-weight: 500;
   color: var(--colore-testo-muto);
   margin-top: 6px;
+  letter-spacing: 0.04em;
 }
 
 /* =============================================
@@ -257,23 +285,29 @@ a {
   border: 1px solid var(--colore-bordo);
   border-radius: var(--raggio);
   overflow: hidden;
-  transition: border-color 0.2s;
+  background: var(--colore-card);
+  transition: box-shadow 0.25s, border-color 0.25s, transform 0.2s;
 }
 
 .progetto-card:hover {
-  border-color: var(--colore-accento);
+  border-color: #D0C9C2;
+  box-shadow: 0 6px 28px rgba(44, 40, 37, 0.09);
+  transform: translateY(-2px);
 }
 
 .progetto-immagine {
   width: 100%;
   height: 180px;
-  background: var(--colore-card);
+  background: #EDE8E2;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 12px;
+  font-weight: 400;
   color: var(--colore-testo-muto);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   /* ✏️ puoi sostituire il colore di sfondo con un'immagine:
      background: url('immagine-progetto.jpg') center/cover; */
 }
@@ -284,32 +318,37 @@ a {
 
 .progetto-meta {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   margin-top: 12px;
   flex-wrap: wrap;
 }
 
 .badge {
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 11px;
+  font-weight: 500;
   padding: 3px 10px;
   border-radius: 4px;
-  background: var(--colore-card);
+  background: var(--colore-sfondo);
   border: 1px solid var(--colore-bordo);
   color: var(--colore-testo-muto);
+  letter-spacing: 0.03em;
 }
 
 .progetto-link {
   display: inline-block;
   margin-top: 16px;
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 12px;
+  font-weight: 500;
   color: var(--colore-accento);
   text-decoration: none;
+  letter-spacing: 0.03em;
 }
 
 .progetto-link:hover {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* =============================================
@@ -345,8 +384,10 @@ a {
 }
 
 .timeline-anno {
-  font-family: var(--font-titoli);
-  font-size: 12px;
+  font-family: var(--font-testo);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   color: var(--colore-testo-muto);
   padding-top: 2px;
   text-align: right;
@@ -366,6 +407,7 @@ a {
   height: 8px;
   border-radius: 50%;
   background: var(--colore-accento);
+  box-shadow: 0 0 0 3px rgba(181, 99, 58, 0.15);
 }
 
 /* =============================================
@@ -375,7 +417,7 @@ a {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .contatto-riga {
@@ -385,19 +427,23 @@ a {
   padding: 16px 20px;
   border: 1px solid var(--colore-bordo);
   border-radius: var(--raggio);
+  background: var(--colore-card);
   text-decoration: none;
   color: var(--colore-testo);
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .contatto-riga:hover {
-  border-color: var(--colore-accento);
-  background: var(--colore-card);
+  border-color: #D0C9C2;
+  box-shadow: 0 4px 16px rgba(44, 40, 37, 0.07);
 }
 
 .contatto-icona {
-  font-family: var(--font-titoli);
-  font-size: 12px;
+  font-family: var(--font-testo);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--colore-accento);
   min-width: 80px;
 }
@@ -422,6 +468,7 @@ a {
 .cv-download-bar p {
   font-size: 14px;
   max-width: none;
+  font-weight: 300;
 }
 
 .btn-scarica {
@@ -429,20 +476,23 @@ a {
   align-items: center;
   gap: 8px;
   background: var(--colore-accento);
-  color: #fff;
+  color: #FFF8F4;
   text-decoration: none;
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 12px;
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   padding: 10px 20px;
   border-radius: var(--raggio);
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.15s;
   white-space: nowrap;
 }
 
 .btn-scarica:hover {
-  opacity: 0.85;
-  color: #fff;
+  opacity: 0.88;
+  color: #FFF8F4;
+  transform: translateY(-1px);
 }
 
 .cv-blocco {
@@ -450,9 +500,10 @@ a {
 }
 
 .cv-blocco-titolo {
-  font-family: var(--font-titoli);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-family: var(--font-testo);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--colore-accento);
   border-bottom: 1px solid var(--colore-bordo);
@@ -474,8 +525,10 @@ a {
 }
 
 .cv-periodo {
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   color: var(--colore-testo-muto);
   padding-top: 3px;
 }
@@ -490,12 +543,15 @@ a {
 .cv-contenuto .cv-luogo {
   font-size: 13px;
   color: var(--colore-accento);
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
+  font-weight: 400;
+  letter-spacing: 0.02em;
   margin-bottom: 4px;
 }
 
 .cv-contenuto p {
   font-size: 13px;
+  font-weight: 300;
   color: var(--colore-testo-muto);
   max-width: none;
   margin: 0;
@@ -509,13 +565,15 @@ a {
 }
 
 .cv-skill {
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 11px;
+  font-weight: 500;
   padding: 4px 12px;
   border-radius: 4px;
   background: var(--colore-card);
   border: 1px solid var(--colore-bordo);
   color: var(--colore-testo);
+  letter-spacing: 0.03em;
 }
 
 /* =============================================
@@ -530,6 +588,7 @@ a {
 #intro p {
   margin-top: 12px;
   max-width: 520px;
+  font-weight: 300;
 }
 
 /* Numerazione stage (cerchio colorato) */
@@ -541,8 +600,8 @@ a {
   height: 32px;
   border-radius: 50%;
   background: var(--colore-accento);
-  color: #fff;
-  font-family: var(--font-titoli);
+  color: #FFF8F4;
+  font-family: var(--font-testo);
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 24px;
@@ -554,10 +613,11 @@ a {
   border-radius: var(--raggio);
   overflow: hidden;
   margin-bottom: 40px;
+  background: var(--colore-card);
 }
 
 .scheda-header {
-  background: var(--colore-card);
+  background: #F0EBE5;
   border-bottom: 1px solid var(--colore-bordo);
   padding: 20px 24px;
   display: flex;
@@ -568,13 +628,16 @@ a {
 }
 
 .scheda-header h2 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 0;
 }
 
 .scheda-header .settore-badge {
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   padding: 4px 12px;
   border: 1px solid var(--colore-bordo);
   border-radius: 100px;
@@ -598,13 +661,14 @@ a {
 }
 
 .scheda-label {
-  font-family: var(--font-titoli);
-  font-size: 11px;
+  font-family: var(--font-testo);
+  font-size: 10px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   color: var(--colore-testo-muto);
   padding: 16px 24px;
-  background: var(--colore-card);
+  background: #F7F2EC;
   border-right: 1px solid var(--colore-bordo);
   display: flex;
   align-items: flex-start;
@@ -613,6 +677,7 @@ a {
 .scheda-valore {
   padding: 14px 24px;
   font-size: 15px;
+  font-weight: 300;
   color: var(--colore-testo);
 }
 
@@ -627,6 +692,7 @@ a {
 
 .attivita-lista li {
   font-size: 15px;
+  font-weight: 300;
   color: var(--colore-testo);
   display: flex;
   gap: 10px;
@@ -636,7 +702,7 @@ a {
 .attivita-lista li::before {
   content: '—';
   color: var(--colore-accento);
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -647,10 +713,10 @@ a {
 }
 
 .relazione-contenitore h3 {
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: var(--colore-testo-muto);
   margin-bottom: 16px;
 }
@@ -662,22 +728,24 @@ a {
 }
 
 .relazione-paragrafo {
-  border-left: 3px solid var(--colore-bordo);
+  border-left: 2px solid var(--colore-accento);
   padding-left: 20px;
 }
 
 .relazione-paragrafo .para-titolo {
-  font-family: var(--font-titoli);
-  font-size: 12px;
+  font-family: var(--font-testo);
+  font-size: 11px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   color: var(--colore-accento);
   margin-bottom: 6px;
 }
 
 .relazione-paragrafo p {
   font-size: 15px;
-  line-height: 1.75;
+  font-weight: 300;
+  line-height: 1.8;
   /* ✏️ il testo della relazione va qui */
 }
 
@@ -688,8 +756,10 @@ footer {
   border-top: 1px solid var(--colore-bordo);
   padding: 32px;
   text-align: center;
-  font-family: var(--font-titoli);
+  font-family: var(--font-testo);
   font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   color: var(--colore-testo-muto);
 }
 
