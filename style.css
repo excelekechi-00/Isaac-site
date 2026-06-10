@@ -179,6 +179,29 @@ a {
   margin-top: 32px;
 }
 
+.chi-sono-contenuto {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 1fr);
+  gap: 32px;
+  margin-top: 24px;
+  align-items: start;
+}
+
+.chi-sono-foto-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chi-sono-foto-card img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  border-radius: 16px;
+  border: 1px solid var(--colore-bordo);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
 .info-riga {
   display: flex;
   flex-direction: column;
@@ -246,11 +269,46 @@ a {
 /* =============================================
    SEZIONE PROGETTI
    ============================================= */
+.progetti-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+
 .progetti-lista {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 32px;
+}
+
+.progetto-foto-card {
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio);
+  padding: 24px;
+  background-color: var(--colore-card);
+  color: var(--colore-testo-muto);
+}
+
+.progetto-foto-card h3 {
+  margin-top: 12px;
+  font-size: 20px;
+  color: var(--colore-testo);
+}
+
+.progetto-foto-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 18px;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .progetti-container,
+  .chi-sono-contenuto {
+    grid-template-columns: 1fr;
+  }
 }
 
 .progetto-card {
