@@ -31,8 +31,10 @@ html {
 }
 
 body {
-  background-color: var(--colore-sfondo);
-  color: var(--colore-testo);
+  background: radial-gradient(circle at top left, rgba(84, 255, 247, 0.10), transparent 26%),
+              radial-gradient(circle at bottom right, rgba(104, 165, 255, 0.12), transparent 18%),
+              var(--colore-sfondo);
+  color: #edf7ff;
   font-family: var(--font-testo);
   font-size: 16px;
   line-height: 1.7;
@@ -44,8 +46,9 @@ body {
 nav {
   position: sticky;
   top: 0;
-  background-color: var(--colore-sfondo);
-  border-bottom: 1px solid var(--colore-bordo);
+  background: rgba(12, 13, 20, 0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
   z-index: 100;
   padding: 0 32px;
 }
@@ -53,10 +56,12 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 32px;
+  gap: 22px;
   max-width: var(--larghezza-max);
   margin: 0 auto;
   padding: 16px 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav a {
@@ -84,7 +89,10 @@ main {
 
 section {
   padding: 80px 0;
-  border-bottom: 1px solid var(--colore-bordo);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  border-radius: 0;
+  margin: 0 0 32px;
 }
 
 section:last-child {
@@ -143,7 +151,8 @@ a {
    SEZIONE HERO (intestazione — solo index)
    ============================================= */
 #hero {
-  padding: 100px 0 80px;
+  padding: 100px 0 90px;
+  min-height: calc(100vh - 114px);
 }
 
 #hero .sottotitolo {
@@ -156,17 +165,18 @@ a {
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   margin-top: 24px;
 }
 
 .tag {
   font-family: var(--font-titoli);
   font-size: 12px;
-  padding: 4px 12px;
-  border: 1px solid var(--colore-bordo);
-  border-radius: 100px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 999px;
   color: var(--colore-testo-muto);
+  background: transparent;
 }
 
 /* =============================================
@@ -198,8 +208,8 @@ a {
   height: auto;
   max-width: 320px;
   border-radius: 16px;
-  border: 1px solid var(--colore-bordo);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: none;
 }
 
 .info-riga {
@@ -304,18 +314,37 @@ a {
   display: block;
 }
 
+.percorso-contenitore {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.percorso-contenitore img {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: none;
+}
+
 @media (max-width: 900px) {
   .progetti-container,
   .chi-sono-contenuto {
     grid-template-columns: 1fr;
   }
+
+  .tag-list {
+    justify-content: center;
+  }
 }
 
 .progetto-card {
-  border: 1px solid var(--colore-bordo);
-  border-radius: var(--raggio);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: calc(var(--raggio) * 1.5);
   overflow: hidden;
   transition: border-color 0.2s;
+  background: transparent;
 }
 
 .progetto-card:hover {
@@ -324,20 +353,26 @@ a {
 
 .progetto-immagine {
   width: 100%;
-  height: 180px;
-  background: var(--colore-card);
+  height: 220px;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-titoli);
   font-size: 12px;
   color: var(--colore-testo-muto);
-  /* ✏️ puoi sostituire il colore di sfondo con un'immagine:
-     background: url('immagine-progetto.jpg') center/cover; */
+  overflow: hidden;
+}
+
+.progetto-immagine img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .progetto-corpo {
   padding: 24px;
+  min-height: 220px;
 }
 
 .progetto-meta {
@@ -757,6 +792,12 @@ footer {
 @media (max-width: 600px) {
   main  { padding: 0 20px; }
   nav   { padding: 0 20px; }
+  nav ul { gap: 14px; }
+  h2 { font-size: 20px; }
+  .progetto-meta { gap: 8px; }
+  .cv-riga { grid-template-columns: 1fr; gap: 10px; }
+  .timeline-item { grid-template-columns: 70px 1fr; }
+  .chi-sono-contenuto { gap: 24px; }
 
   /* index */
   .griglia-2col      { grid-template-columns: 1fr; }
