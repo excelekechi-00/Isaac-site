@@ -280,15 +280,12 @@ a {
    SEZIONE PROGETTI
    ============================================= */
 .progetti-container {
-  display: grid;
-  grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1fr);
-  gap: 32px;
   margin-top: 32px;
 }
 
 .progetti-lista {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -331,6 +328,10 @@ a {
 @media (max-width: 900px) {
   .progetti-container,
   .chi-sono-contenuto {
+    grid-template-columns: 1fr;
+  }
+
+  .progetti-lista {
     grid-template-columns: 1fr;
   }
 
